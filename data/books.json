@@ -1,0 +1,44 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "name": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "genre": "Fantasy",
+      "price": "12.99",
+      "publisher": "Houghton Mifflin"
+    },
+    {
+      "id": "2",
+      "name": "The Land Before Time",
+      "author": "Alan Moore",
+      "genre": "Fantasy",
+      "price": "12.99",
+      "publisher": "Houghton Mifflin"
+    },
+    {
+      "id": "3",
+      "name": "The Land Before Time",
+      "author": "Alan Moore",
+      "genre": "Children's",
+      "price": "8.50",
+      "publisher": "Universal Pictures"
+    },
+    {
+      "id": "4",
+      "name": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "genre": "Romance",
+      "price": "9.99",
+      "publisher": "T. Egerton, Whitehall"
+    },
+    {
+      "id": "5",
+      "name": "1984",
+      "author": "George Orwell",
+      "genre": "Dystopian",
+      "price": "10.50",
+      "publisher": "Secker & Warburg"
+    }
+  ]
+}

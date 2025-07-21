@@ -1,0 +1,22 @@
+{
+  "name": "3_librarymanagementsystem",
+  "version": "1.0.0",
+  "description": "LMS System",
+  "license": "ISC",
+  "author": "Dhruv Agrawal",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KraKinMe/Library-Management-System.git"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
