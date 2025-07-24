@@ -1,5 +1,6 @@
 const express=require('express');
 let {books}=require('../data/books.json');
+const {users}=require('../data/users.json');
 const router=express.Router();
 
 router.get('/',(req,res)=>{
@@ -62,6 +63,71 @@ router.post('/',(req,res)=>{
     
 })
 
+
+router.put('/:id',(req,res)=>{
+    const {id}=req.params;
+    const {data}=req.body;
+
+    const book=books.find((each)=>each.id===id);
+
+    if(!book){
+        return res.status(404).json({
+            success:false,
+            message:`Book Not Found for ${id}`
+        })
+    }
+
+    books=books.map((each)=>{
+        if(each.id===id){
+            return{
+                ...each,
+                ...data
+            }
+        }
+        return each;
+    })
+
+    res.status(200).json({
+        success:true,
+        message:`Book Updated Successfully`
+    })
+})
+
+
+router.delete('/:id',(req,res)=>{
+    const {id}=req.params;
+
+    const index=books.findIndex((each)=>each.id===id);
+
+    if(index===-1){
+        return res.status(404).json({
+            success:false,
+            message:`No Book with ID: ${id}`
+        })
+    }
+
+    books.splice(index,1);
+
+    res.status(200).json({
+        success:true,
+        message:`Successfully Deleted`
+    })
+})
+
+
+
+
+/// BOOKS+USER DATA
+
+/**
+ * Route:- /books/issued
+ * METHOD:- GET
+ * Desc:- Details of all the issued books
+ */
+
+// router.get('/books/issued',(req,res)=>{
+
+// })
 
 module.exports=router;
 //
