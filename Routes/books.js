@@ -120,14 +120,35 @@ router.delete('/:id',(req,res)=>{
 /// BOOKS+USER DATA
 
 /**
- * Route:- /books/issued
+ * Route:- /books/issued/for-users
  * METHOD:- GET
  * Desc:- Details of all the issued books
  */
 
-// router.get('/books/issued',(req,res)=>{
+router.get('/issued/for-users',(req,res)=>{
+    const usersWithIssuedBooks=users.filter((each)=>{
+        if(each.issuedBook){
+            return each;
+        }
+    });
 
-// })
+    const issuedBooks=[];
+
+    usersWithIssuedBooks.forEach((each)=>{
+        const book=books.find((boook)=>boook.id===each.issuedBook);
+
+        book.issuedBy=each.name;
+        book.issuedDate=each.issuedDate;
+        book.returnDate=each.returnDate;
+
+        issuedBooks.push(book);
+
+    })
+    res.status(200).json({
+        success:true,
+        data:issuedBooks
+    })
+})
 
 module.exports=router;
 //
